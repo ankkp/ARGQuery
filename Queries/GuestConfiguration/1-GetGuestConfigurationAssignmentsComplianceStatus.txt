@@ -1,0 +1,6 @@
+GuestConfigurationResources
+| where type == "microsoft.guestconfiguration/guestconfigurationassignments"
+| where * contains "<guestconfigurationassignmentName>"
+| extend complianceStatus = properties.complianceStatus
+| extend Reason = properties.latestAssignmentReport.resources[0].reasons
+| where id contains "<resourceID>"
