@@ -1,0 +1,6 @@
+resources
+| where type contains "microsoft.compute/virtualmachines/extensions"
+| extend publisher = properties.publisher
+| where publisher contains "<name>"
+| where id contains "<VMname>"
+| project id, name, publisher
