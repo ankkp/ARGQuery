@@ -1,0 +1,20 @@
+securityresources
+| where type == "microsoft.security/assessments"
+| where subscriptionId == "<subscriptionID>"
+| where name == "<assesment name>"
+| where id contains "<resource name>"
+| extend resourceName = tostring(split(tolower(extract("(.*)/providers/Microsoft.Security",1, id)),"/")[-1])
+| extend statusInMdc = properties.status.code
+| project resourceName, statusInMdc
+| join
+(
+policyresources
+| where type == "microsoft.policyinsights/policystates"
+//| where subscriptionId == "<subscriptionID>"
+| where * contains "<Policy defincation ID>"
+| where id contains "<resource name>"
+| extend resourceName = tostring(split(tolower(extract("(.*)/providers/microsoft.policyinsights",1, id)),"/")[-1])
+| extend statusInPolicy = properties.complianceState
+| project resourceName, statusInPolicy
+) on resourceName
+| project resourceName, statusInMdc, statusInPolicy
