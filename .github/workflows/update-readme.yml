@@ -3,7 +3,7 @@ name: Update README
 on:
   push:
     paths:
-      - '**' # Trigger the workflow when any file is added or modified
+      - '**' # Trigger the workflow when any file is added, modified, or deleted
 
 jobs:
   update-readme:
@@ -12,15 +12,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Generate file list
-        id: filelist
-        run: |
-          echo "## Data Files" > files.md
-          echo "" >> files.md
-          find . -type f -not -path "./.github/*" -not -name "README.md" -exec sh -c "echo \"- [\$(basename {})]({})\"" \; >> files.md
-
       - name: Update README
         run: |
-          sed -e '/## Data Files/,$d' README.md > temp.md
-          cat files.md >> temp.md
-          mv temp.md README.md
+          echo "# My GitHub Repository" > README.md
+          echo "" >> README.md
+          echo "This repository contains various files with data." >> README.md
+          echo "" >> README.md
+          echo "## Data Files" >> README.md
+          echo "" >> README.md
+          find . -type f -not -path "./.github/*" -not -name "README.md" -exec sh -c "echo \"- [\$(basename {})]({})\"" \; >> README.md
+
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add README.md
+          git commit -m "Update README"
+          git push
