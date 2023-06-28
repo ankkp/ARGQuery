@@ -3,7 +3,8 @@ name: Update README
 on:
   push:
     paths:
-      - '**' # Trigger the workflow when any file is added, modified, or deleted
+      - 'Queries/**' # Trigger the workflow when files are added, modified, or deleted in the 'Queries' directory
+      - 'Ideas/**' # Trigger the workflow when files are added, modified, or deleted in the 'Ideas' directory
 
 jobs:
   update-readme:
@@ -20,7 +21,13 @@ jobs:
           echo "" >> README.md
           echo "## Data Files" >> README.md
           echo "" >> README.md
-          find . -type f -not -path "./.github/*" -not -name "README.md" -exec sh -c "echo \"- [\$(basename {})]({})\"" \; >> README.md
+          echo "### Queries" >> README.md
+          echo "" >> README.md
+          find Queries -type f -exec sh -c "echo \"- [\$(basename {})](https://github.com/ankkp/ARGQuery/blob/main/Queries/{})\"" \; >> README.md
+          echo "" >> README.md
+          echo "### Ideas" >> README.md
+          echo "" >> README.md
+          find Ideas -type f -exec sh -c "echo \"- [\$(basename {})](https://github.com/ankkp/ARGQuery/blob/main/Ideas/{})\"" \; >> README.md
 
           git config user.name github-actions
           git config user.email github-actions@github.com
