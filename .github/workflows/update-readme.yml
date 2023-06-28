@@ -23,11 +23,21 @@ jobs:
           echo "" >> README.md
           echo "### Queries" >> README.md
           echo "" >> README.md
+          echo "<details>" >> README.md
+          echo "<summary>Click to expand</summary>" >> README.md
+          echo "" >> README.md
           find Queries -type f -exec sh -c "echo \"- [\$(basename {})](https://github.com/ankkp/ARGQuery/blob/main/Queries/{})\"" \; >> README.md
+          echo "" >> README.md
+          echo "</details>" >> README.md
           echo "" >> README.md
           echo "### Ideas" >> README.md
           echo "" >> README.md
+          echo "<details>" >> README.md
+          echo "<summary>Click to expand</summary>" >> README.md
+          echo "" >> README.md
           find Ideas -type f -exec sh -c "echo \"- [\$(basename {})](https://github.com/ankkp/ARGQuery/blob/main/Ideas/{})\"" \; >> README.md
+          echo "" >> README.md
+          echo "</details>" >> README.md
 
           git config user.name github-actions
           git config user.email github-actions@github.com
