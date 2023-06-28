@@ -1,0 +1,26 @@
+name: Update README
+
+on:
+  push:
+    paths:
+      - '**' # Trigger the workflow when any file is added or modified
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Generate file list
+        id: filelist
+        run: |
+          echo "## Data Files" > files.md
+          echo "" >> files.md
+          find . -type f -not -path "./.github/*" -not -name "README.md" -exec sh -c "echo \"- [\$(basename {})]({})\"" \; >> files.md
+
+      - name: Update README
+        run: |
+          sed -e '/## Data Files/,$d' README.md > temp.md
+          cat files.md >> temp.md
+          mv temp.md README.md
