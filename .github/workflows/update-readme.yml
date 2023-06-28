@@ -13,6 +13,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Fetch latest changes
+        run: git fetch origin
+
+      - name: Merge or rebase changes
+        run: git rebase origin/main
+
       - name: Update README
         run: |
           echo "# My GitHub Repository" > README.md
@@ -39,8 +45,13 @@ jobs:
           echo "" >> README.md
           echo "</details>" >> README.md
 
+      - name: Configure Git
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
+
+      - name: Commit and push changes
+        run: |
           git add README.md
           git commit -m "Update README"
           git push
