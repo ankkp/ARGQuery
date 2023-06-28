@@ -1,0 +1,4 @@
+resources
+| where type == "microsoft.compute/virtualmachines"
+| where id contains "<VM name>"
+| project id, identity
