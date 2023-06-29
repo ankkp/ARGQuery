@@ -1,3 +1,5 @@
+//V.1
+
 Resources
 | where type == 'microsoft.compute/virtualmachines/extensions'
 | extend vmId = tolower(tostring(split(id, '/extensions')[0]))
@@ -7,4 +9,22 @@ Resources
 | project vmId, vmName, extensionName, extensionsStatus
 | summarize extensionsStatus = make_bag(pack(extensionName, extensionsStatus)) by vmId, vmName
 
-//still need to improve
+//V.2
+Resources
+| where type == 'microsoft.compute/virtualmachines/extensions'
+| extend vmId = tolower(tostring(split(id, '/extensions')[0]))
+| extend vmName = tostring(split(vmId, '/')[8])
+| extend extensionName = name
+| summarize extensionsStatus = make_set(properties.provisioningState) by vmId, vmName, extensionName
+| project vmId, vmName, extensionName, extensionsStatus
+| summarize extensionsStatus = make_bag(pack(extensionName, extensionsStatus)) by vmId, vmName
+| extend ChangeTracking_Windows = iff(isempty(extensionsStatus["ChangeTracking-Windows"]), "Not Installed", tostring(extensionsStatus["ChangeTracking-Windows"])),
+         MicrosoftDnsAgent = iff(isempty(extensionsStatus["MicrosoftDnsAgent"]), "Not Installed", tostring(extensionsStatus["MicrosoftDnsAgent"])),
+         AzureMonitorWindowsAgent = iff(isempty(extensionsStatus["AzureMonitorWindowsAgent"]), "Not Installed", tostring(extensionsStatus["AzureMonitorWindowsAgent"])),
+         MDE_Windows = iff(isempty(extensionsStatus["MDE.Windows"]), "Not Installed", tostring(extensionsStatus["MDE.Windows"])),
+         AzurePolicyforWindows = iff(isempty(extensionsStatus["AzurePolicyforWindows"]), "Not Installed", tostring(extensionsStatus["AzurePolicyforWindows"])),
+         WindowsAgent_AzureSecurityCenter = iff(isempty(extensionsStatus["WindowsAgent.AzureSecurityCenter"]), "Not Installed", tostring(extensionsStatus["WindowsAgent.AzureSecurityCenter"])),
+         AzureSecurityWindowsAgent = iff(isempty(extensionsStatus["AzureSecurityWindowsAgent"]), "Not Installed", tostring(extensionsStatus["AzureSecurityWindowsAgent"]))
+
+
+//still can be improved
