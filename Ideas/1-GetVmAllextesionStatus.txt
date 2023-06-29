@@ -1,0 +1,10 @@
+Resources
+| where type == 'microsoft.compute/virtualmachines/extensions'
+| extend vmId = tolower(tostring(split(id, '/extensions')[0]))
+| extend vmName = tostring(split(vmId, '/')[8])
+| extend extensionName = name
+| summarize extensionsStatus = make_set(properties.provisioningState) by vmId, vmName, extensionName
+| project vmId, vmName, extensionName, extensionsStatus
+| summarize extensionsStatus = make_bag(pack(extensionName, extensionsStatus)) by vmId, vmName
+
+//still need to improve
