@@ -4,60 +4,25 @@ This repository contains various files with data.
 
 ## Data Files
 
-- [test.txt](./data/test.txt)
-- [main](./.git/logs/refs/remotes/origin/main)
-- [main](./.git/logs/refs/heads/main)
-- [HEAD](./.git/logs/HEAD)
-- [main](./.git/refs/remotes/origin/main)
-- [main](./.git/refs/heads/main)
-- [HEAD](./.git/HEAD)
-- [shallow](./.git/shallow)
-- [prepare-commit-msg.sample](./.git/hooks/prepare-commit-msg.sample)
-- [push-to-checkout.sample](./.git/hooks/push-to-checkout.sample)
-- [pre-merge-commit.sample](./.git/hooks/pre-merge-commit.sample)
-- [applypatch-msg.sample](./.git/hooks/applypatch-msg.sample)
-- [fsmonitor-watchman.sample](./.git/hooks/fsmonitor-watchman.sample)
-- [sendemail-validate.sample](./.git/hooks/sendemail-validate.sample)
-- [post-update.sample](./.git/hooks/post-update.sample)
-- [pre-applypatch.sample](./.git/hooks/pre-applypatch.sample)
-- [commit-msg.sample](./.git/hooks/commit-msg.sample)
-- [update.sample](./.git/hooks/update.sample)
-- [pre-rebase.sample](./.git/hooks/pre-rebase.sample)
-- [pre-commit.sample](./.git/hooks/pre-commit.sample)
-- [pre-push.sample](./.git/hooks/pre-push.sample)
-- [pre-receive.sample](./.git/hooks/pre-receive.sample)
-- [3437bb6a822372ce7afa3fd8a42fbd5c28b44e](./.git/objects/db/3437bb6a822372ce7afa3fd8a42fbd5c28b44e)
-- [099ca874cdff469cc32a2356159803054ddec5](./.git/objects/44/099ca874cdff469cc32a2356159803054ddec5)
-- [b0f54448bb7b92fafab1715070b810749ba5e2](./.git/objects/25/b0f54448bb7b92fafab1715070b810749ba5e2)
-- [ff9f69b25784fb6497c429cef5283feeed0ae7](./.git/objects/25/ff9f69b25784fb6497c429cef5283feeed0ae7)
-- [25b7528daabcc2bdd6cfd6acb64744afe25ba6](./.git/objects/ac/25b7528daabcc2bdd6cfd6acb64744afe25ba6)
-- [793e060d56dc291228461371e99d0d5dcf4e8c](./.git/objects/df/793e060d56dc291228461371e99d0d5dcf4e8c)
-- [8b7429b4c5f9db2a464873cfb8769be1e3c6f5](./.git/objects/ed/8b7429b4c5f9db2a464873cfb8769be1e3c6f5)
-- [9828c632ac7507555ddb7a82d281402e9ad0a4](./.git/objects/bb/9828c632ac7507555ddb7a82d281402e9ad0a4)
-- [b9d244966a077ec6971f439462f4ab0c2085cf](./.git/objects/cb/b9d244966a077ec6971f439462f4ab0c2085cf)
-- [5079c5e20bca2756bf2a567e84a3db3b10d91b](./.git/objects/5b/5079c5e20bca2756bf2a567e84a3db3b10d91b)
-- [137891791fe96927ad78e64b0aad7bded08bdc](./.git/objects/8b/137891791fe96927ad78e64b0aad7bded08bdc)
-- [dd2bba2fd20a3e21c4bdb6fe27c492f4712e28](./.git/objects/a3/dd2bba2fd20a3e21c4bdb6fe27c492f4712e28)
-- [91cc9468d4ea8bec19759940fd202431208b11](./.git/objects/11/91cc9468d4ea8bec19759940fd202431208b11)
-- [db9f9f93c1725755f066d904995e3da6480855](./.git/objects/11/db9f9f93c1725755f066d904995e3da6480855)
-- [87d1a037672459fa729358bfec0bd2799ddfaa](./.git/objects/d5/87d1a037672459fa729358bfec0bd2799ddfaa)
-- [4ca123483683ce27b093e9c3c67bf89a84d268](./.git/objects/d5/4ca123483683ce27b093e9c3c67bf89a84d268)
-- [3207138106474922fdd1d3e6f30023882b4c71](./.git/objects/f7/3207138106474922fdd1d3e6f30023882b4c71)
-- [1f993ba3d2d575af4d5917cf419d87c5cc3ef1](./.git/objects/0d/1f993ba3d2d575af4d5917cf419d87c5cc3ef1)
-- [1b396d6123e9080df93e1f208519fcd7e58e19](./.git/objects/60/1b396d6123e9080df93e1f208519fcd7e58e19)
-- [cef0d52921b70770e2ae5c0b27a7ea7d33bc6d](./.git/objects/d8/cef0d52921b70770e2ae5c0b27a7ea7d33bc6d)
-- [6cc7e54369ace85a859bbe38b8fd549b38365f](./.git/objects/15/6cc7e54369ace85a859bbe38b8fd549b38365f)
-- [69488f7fb1f4b56a8c0e5eb48cecbfadfa9219](./.git/objects/12/69488f7fb1f4b56a8c0e5eb48cecbfadfa9219)
-- [c6db6f17318b6b0a2e3aa2aa3a5e284c14d419](./.git/objects/57/c6db6f17318b6b0a2e3aa2aa3a5e284c14d419)
-- [exclude](./.git/info/exclude)
-- [description](./.git/description)
-- [config](./.git/config)
-- [index](./.git/index)
-- [FETCH_HEAD](./.git/FETCH_HEAD)
-- [1-GetPublicIPwithListofOpenPorts.txt](./Ideas/1-GetPublicIPwithListofOpenPorts.txt)
-- [1-GetGuestConfigurationAssignments.txt](./Queries/GuestConfiguration/1-GetGuestConfigurationAssignments.txt)
-- [1-GetGuestConfigurationAssignmentsComplianceStatus.txt](./Queries/GuestConfiguration/1-GetGuestConfigurationAssignmentsComplianceStatus.txt)
-- [GetExtesions-bypublisher](./Queries/VM/Extensions/GetExtesions-bypublisher)
-- [GetExtesions.txt](./Queries/VM/Extensions/GetExtesions.txt)
-- [1-GetVmIdentityInfo.txt](./Queries/VM/identity/1-GetVmIdentityInfo.txt)
-- [1-ComparePolicyResultswithMDCassesment](./Queries/MDC/Recommendations/1-ComparePolicyResultswithMDCassesment)
+### Queries
+
+<details>
+<summary>Click to expand</summary>
+
+- [2-GetGuestConfigurationAssignmentsComplianceStatus.txt](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/GuestConfiguration/2-GetGuestConfigurationAssignmentsComplianceStatus.txt)
+- [1-GetGuestConfigurationAssignments.txt](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/GuestConfiguration/1-GetGuestConfigurationAssignments.txt)
+- [1-ComparePolicyResultswithMDCassesment](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/MDC/Recommendations/1-ComparePolicyResultswithMDCassesment)
+- [GetExtesions.txt](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/VM/Extensions/GetExtesions.txt)
+- [GetExtesions-bypublisher](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/VM/Extensions/GetExtesions-bypublisher)
+- [1-GetVmIdentityInfo.txt](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/VM/identity/1-GetVmIdentityInfo.txt)
+
+</details>
+
+### Ideas
+
+<details>
+<summary>Click to expand</summary>
+
+- [1-GetPublicIPwithListofOpenPorts.txt](https://github.com/ankkp/ARGQuery/blob/main/Ideas/Ideas/1-GetPublicIPwithListofOpenPorts.txt)
+
+</details>
