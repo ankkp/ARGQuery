@@ -1,0 +1,2 @@
+policyresources
+| where type == "microsoft.authorization/policyassignments"
