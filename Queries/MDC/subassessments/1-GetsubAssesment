@@ -1,0 +1,1 @@
+securityresources | where type =~ "microsoft.security/assessments/subassessments"
