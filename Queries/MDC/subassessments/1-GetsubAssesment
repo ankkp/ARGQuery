@@ -1,3 +1,12 @@
 securityresources | where type =~ "microsoft.security/assessments/subassessments"
-| extend subAssessmentName=tostring(properties.displayName),
-
+        | extend resourceId = tostring(properties.resourceDetails.id)
+        | extend subAssessmentName=tostring(properties.displayName),
+            subAssessmentDescription=tostring(properties.description),
+            subAssessmentRemediation=tostring(properties.remediation),
+            subAssessmentCategory=tostring(properties.category),
+            subAssessmentImpact=tostring(properties.impact),
+            severity=tostring(properties.status.severity),
+            status=tostring(properties.status.code),
+            cause=tostring(properties.status.cause),
+            statusDescription=tostring(properties.status.description),
+            additionalData=tostring(properties.additionalData)
