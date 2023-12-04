@@ -1,4 +1,5 @@
 securityresources | where type =~ "microsoft.security/assessments/subassessments"
+        | extend assessmentKey=extract(@"(?i)providers/Microsoft.Security/assessments/([^/]*)", 1, id), subAssessmentId=tostring(properties.id), parentResourceId= extract("(.+)/providers/Microsoft.Security", 1, id)
         | extend resourceId = tostring(properties.resourceDetails.id)
         | extend subAssessmentName=tostring(properties.displayName),
             subAssessmentDescription=tostring(properties.description),
