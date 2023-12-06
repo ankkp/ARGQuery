@@ -1,0 +1,13 @@
+PolicyResources
+| where type =~ 'Microsoft.PolicyInsights/PolicyStates'
+| extend complianceState = tostring(properties.complianceState)
+| extend
+	resourceId = tostring(properties.resourceId),
+	policyAssignmentId = tostring(properties.policyAssignmentId),
+	policyAssignmentScope = tostring(properties.policyAssignmentScope),
+	policyAssignmentName = tostring(properties.policyAssignmentName),
+	policyDefinitionId = tostring(properties.policyDefinitionId),
+	policyDefinitionReferenceId = tostring(properties.policyDefinitionReferenceId)
+| where resourceId contains "DefaultResourceGroup-EUS"	
+| where policyAssignmentId contains "mshs_tags"
+| project resourceId,policyAssignmentId, complianceState, policyAssignmentScope, policyAssignmentName
