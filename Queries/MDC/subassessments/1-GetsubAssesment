@@ -11,5 +11,6 @@ securityresources | where type =~ "microsoft.security/assessments/subassessments
             cause=tostring(properties.status.cause),
             statusDescription=tostring(properties.status.description),
             additionalData=tostring(properties.additionalData)
+            source=tostring(additionalData.source)
         | where assessmentKey == "<key>"
-        //| Project assessmentKey, resourceId, subAssessmentName, 
+        | Project assessmentKey, resourceId, subAssessmentName, source
