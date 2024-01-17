@@ -11,6 +11,7 @@ This repository contains various files with data.
 
 - [1-GetAssignments](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/policies/1-GetAssignments)
 - [2-GetComplianceState](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/policies/2-GetComplianceState)
+- [3-GetDefinations](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/policies/3-GetDefinations)
 - [2-GetGuestConfigurationAssignmentsComplianceStatus.txt](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/GuestConfiguration/2-GetGuestConfigurationAssignmentsComplianceStatus.txt)
 - [1-GetGuestConfigurationAssignments.txt](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/GuestConfiguration/1-GetGuestConfigurationAssignments.txt)
 - [1-GetVmIdentityInfo.txt](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/VM/identity/1-GetVmIdentityInfo.txt)
