@@ -1,2 +1,6 @@
 policyresources
 | where type == "microsoft.authorization/policyassignments"
+| extend policyDefinitionId = properties.policyDefinitionId
+| extend displayName = properties.displayName
+| extend scope = properties.scope
+| project policyDefinitionId, displayName, name, scope
