@@ -1,2 +1,3 @@
 resources
 | where type contains "microsoft.compute/virtualmachines/extensions"
+| where * contains "<Resource ID>"
