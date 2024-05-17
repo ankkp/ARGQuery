@@ -1,0 +1,7 @@
+PolicyResources
+| where type =~ 'Microsoft.PolicyInsights/PolicyStates'
+| extend policyDefinitionId =  tostring(properties.policyDefinitionId)
+| extend policyAssignmentScope = tostring(properties.policyAssignmentScope)
+| extend policyAssignmentId = tostring(properties.policyAssignmentId)
+| extend policyDefinitionName = tostring(properties.policyDefinitionName)
+| distinct  policyDefinitionId, policyAssignmentScope, policyAssignmentId,policyDefinitionName
