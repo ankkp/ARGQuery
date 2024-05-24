@@ -17,6 +17,7 @@ This repository contains various files with data.
 - [GetExtesions.txt](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/VM/Extensions/GetExtesions.txt)
 - [GetExtesions-bypublisher](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/VM/Extensions/GetExtesions-bypublisher)
 - [4-GetDistinctPolicyassigned](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/policies/4-GetDistinctPolicyassigned)
+- [5-FindcertainPolicyassignedinfo](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/policies/5-FindcertainPolicyassignedinfo)
 - [3-GetDefinations](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/policies/3-GetDefinations)
 - [1-GetAssignments](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/policies/1-GetAssignments)
 - [2-GetComplianceState](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/policies/2-GetComplianceState)
