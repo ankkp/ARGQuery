@@ -1,0 +1,16 @@
+policyresources
+| where type == "microsoft.authorization/policydefinitions"
+| extend displayName = tostring(properties.displayName)
+| where displayName contains "<policy name you want to hunt for>"
+| extend policyDefinitionId =  tolower(id)
+| distinct policyDefinitionId, displayName
+| join kind=inner (
+    policyresources
+    | where type =~ 'Microsoft.PolicyInsights/PolicyStates'
+    | extend policyDefinitionId = tostring(properties.policyDefinitionId)
+    | extend policyAssignmentScope = tostring(properties.policyAssignmentScope)
+    | extend policyAssignmentId = tostring(properties.policyAssignmentId)
+    | extend policyDefinitionName = tostring(properties.policyDefinitionName)
+    | distinct policyDefinitionId, policyAssignmentScope, policyAssignmentId, policyDefinitionName
+) on policyDefinitionId
+| project policyDefinitionId, displayName, policyAssignmentScope, policyAssignmentId, policyDefinitionName
