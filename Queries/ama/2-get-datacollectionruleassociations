@@ -1,0 +1,3 @@
+insightsresources
+| where type == "microsoft.insights/datacollectionruleassociations"
+| where id contains "<machine resoiurce id>"
