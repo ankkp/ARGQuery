@@ -21,6 +21,7 @@ This repository contains various files with data.
 - [1-GetVmIdentityInfo.txt](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/VM/identity/1-GetVmIdentityInfo.txt)
 - [2-GetGuestConfigurationAssignmentsComplianceStatus.txt](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/GuestConfiguration/2-GetGuestConfigurationAssignmentsComplianceStatus.txt)
 - [1-GetGuestConfigurationAssignments.txt](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/GuestConfiguration/1-GetGuestConfigurationAssignments.txt)
+- [2-get-datacollectionruleassociations](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/ama/2-get-datacollectionruleassociations)
 - [1-get-dcr](https://github.com/ankkp/ARGQuery/blob/main/Queries/Queries/ama/1-get-dcr)
 
 </details>
