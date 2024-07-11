@@ -1,0 +1,7 @@
+resources
+| where type == 'microsoft.insights/datacollectionrules'
+| where properties contains "Microsoft-Syslog" or properties contains "Microsoft-CommonSecurityLog"
+| extend datasources = properties.dataSources
+| extend destinations = properties.destinations
+| extend extensions = datasources.extensions
+| project name, kind, location, datasources, destinations, extensions
